@@ -19,8 +19,14 @@ handle_zip()
     unzip -l "$1"
 }
 
-#
-# Main
+#handle_pem()
+{
+    file "$1"
+    echo -n "`openssl x509 -noout -in cert.pem -fingerprint`   `openssl x509 -noout -in cert.pem  -subject`"
+    echo
+}
+
+# Main 
 #
 
 filename="$1"
